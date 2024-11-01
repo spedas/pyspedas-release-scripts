@@ -10,7 +10,8 @@ git clone https://github.com/spedas/pyspedas.git "$temp_dir/pyspedas"
 cd "$temp_dir/pyspedas"
 
 # Build the package
-python setup.py sdist bdist_wheel
+# Note: you may now need to install the python 'build' package, since we are no longer calling setup.py directly
+python -m build --sdist --wheel
 
 # Upload the package to PyPI
 twine upload dist/*
